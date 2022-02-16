@@ -20,10 +20,11 @@
 
 #include "Eigen/Dense"
 
-#include "cyber/common/macros.h"
-#include "modules/perception/lidar/common/lidar_error_code.h"
-#include "modules/perception/lib/registerer/registerer.h"
 #include "modules/drivers/proto/pointcloud.pb.h"
+
+#include "cyber/common/macros.h"
+#include "modules/perception/lib/registerer/registerer.h"
+#include "modules/perception/lidar/common/lidar_error_code.h"
 #include "modules/perception/lidar/common/lidar_frame.h"
 
 namespace apollo {
@@ -47,9 +48,8 @@ class BaseLidarObstacleDetection {
   BaseLidarObstacleDetection() = default;
   virtual ~BaseLidarObstacleDetection() = default;
 
-  virtual bool Init(
-      const LidarObstacleDetectionInitOptions& options =
-      LidarObstacleDetectionInitOptions()) = 0;
+  virtual bool Init(const LidarObstacleDetectionInitOptions& options =
+                        LidarObstacleDetectionInitOptions()) = 0;
 
   virtual LidarProcessResult Process(
       const LidarObstacleDetectionOptions& options,
@@ -57,8 +57,7 @@ class BaseLidarObstacleDetection {
       LidarFrame* frame) = 0;
 
   virtual LidarProcessResult Process(
-      const LidarObstacleDetectionOptions& options,
-      LidarFrame* frame) = 0;
+      const LidarObstacleDetectionOptions& options, LidarFrame* frame) = 0;
 
   virtual std::string Name() const = 0;
 
